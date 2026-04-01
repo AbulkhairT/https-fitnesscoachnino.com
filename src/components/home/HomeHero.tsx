@@ -97,8 +97,8 @@ export function HomeHero() {
           <div className="w-full shrink-0 lg:hidden">
             <div className="relative mx-auto aspect-[3/4] w-full max-w-[min(100%,300px)] overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
               <Image
-                src={heroMobileImage}
-                alt={`${site.doctor.name} — ${site.name}`}
+                src={heroMobileImage.src}
+                alt={heroMobileImage.alt}
                 fill
                 priority
                 className="object-cover object-center"

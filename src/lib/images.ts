@@ -10,19 +10,8 @@ export const logoUrl =
 /** Local file in /public — group photo for staff / about sections (not mobile hero) */
 export const staffTeamPhoto = "/team.jpg";
 
-/** Desktop hero carousel — landscape-friendly slides only (no wide group shot) */
-export const heroDesktopSlides = [
-  `${IMG}/slide1.jpg.webp?21d5c3fe3c0a2fdbce9f68cb165eef26`,
-  `${IMG}/slide2.jpg.webp?db7d4f4fdbf60b19b614eb3372d2eefb`,
-  `${IMG}/slide3.jpg.webp?c71e3f758730729415095fdc7fc79879`,
-  `${IMG}/slide4.jpg.webp?15a531e1eb44dc84b81f9d2ce27da199`,
-] as const;
-
 export const doctorPhoto =
   "https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/0k/0/h/images/IMG_6924_-_Copy.jpg.webp?2383d4ec0c608110e680e97e01ca7ad6";
-
-/** Mobile hero — single subject, centered; works in portrait crop (separate art direction from desktop) */
-export const heroMobileImage = doctorPhoto;
 
 /** Original site services illustration — spinal & postural screenings */
 export const servicesPostureImage =
@@ -39,3 +28,18 @@ export const galleryPhotos = [
   { src: `${G}/gallery_5.jpg.webp?9f8e78f6fe163dd228742e1f4087cc3b`, alt: "Treatment and comfort" },
   { src: `${G}/gallery_6.jpg.webp?4fe8fccfe1e75328376412b3602d1a5b`, alt: "Naples chiropractic services" },
 ] as const;
+
+/**
+ * Desktop hero — office / lifestyle slides only (no doctor portrait; Dr. Barbaro appears only in doctor section).
+ * Three slides — trust-building atmosphere, not the full four-slide rotation.
+ */
+export const heroDesktopSlides = [
+  `${IMG}/slide2.jpg.webp?db7d4f4fdbf60b19b614eb3372d2eefb`,
+  `${IMG}/slide3.jpg.webp?c71e3f758730729415095fdc7fc79879`,
+  `${IMG}/slide4.jpg.webp?15a531e1eb44dc84b81f9d2ce27da199`,
+] as const;
+
+/**
+ * Mobile hero — single office / lifestyle image (not doctorPhoto). Portrait-friendly crop; doctor headshot only in “Your chiropractor”.
+ */
+export const heroMobileImage = galleryPhotos[3];
