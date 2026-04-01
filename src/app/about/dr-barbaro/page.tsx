@@ -14,16 +14,19 @@ export default function DrPage() {
     <div className="py-16 sm:py-24">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div className="relative aspect-square max-w-lg overflow-hidden rounded-2xl bg-[var(--muted)]">
-            <Image
-              src={doctorPhoto}
-              alt={site.doctor.name}
-              fill
-              className="object-contain object-center p-6"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              priority
-            />
-          </div>
+          <figure className="flex justify-center lg:justify-start">
+            <div className="w-full max-w-lg rounded-2xl border border-[var(--border)] bg-[#eef1ef] p-4 sm:p-6">
+              <Image
+                src={doctorPhoto}
+                alt={site.doctor.name}
+                width={1023}
+                height={1023}
+                className="h-auto w-full rounded-xl object-contain object-center"
+                sizes="(max-width: 1024px) 100vw, 512px"
+                priority
+              />
+            </div>
+          </figure>
           <div>
             <h1 className="font-display text-4xl sm:text-5xl">
               {site.doctor.name}

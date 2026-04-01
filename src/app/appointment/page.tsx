@@ -1,35 +1,33 @@
 import type { Metadata } from "next";
+import { AppointmentEmbed } from "@/components/appointment/AppointmentEmbed";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Request appointment",
-  description: `Schedule with ${site.name}.`,
+  title: "Appointment request",
+  description: `Request an appointment with ${site.name}, Naples, FL.`,
 };
 
 export default function AppointmentPage() {
   return (
-    <div className="py-16 sm:py-24">
-      <Container className="max-w-2xl text-center">
-        <h1 className="font-display text-4xl sm:text-5xl">Request an appointment</h1>
-        <p className="mt-6 text-[var(--muted-foreground)]">
-          We use our secure scheduling system to find a time that fits your
-          calendar. You will complete the flow on our trusted host site.
+    <div className="py-12 sm:py-16">
+      <Container>
+        <h1 className="font-display text-4xl sm:text-5xl">Appointment request</h1>
+        <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
+          Use the form below to request a time with our office. We will do our
+          best to accommodate your preferred day and time — your visit is fully
+          booked only after you receive confirmation from us.
         </p>
-        <a
-          href={site.external.appointment}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-10 inline-flex rounded-full bg-[var(--cta)] px-10 py-4 text-sm font-semibold text-[var(--cta-foreground)]"
-        >
-          Continue to scheduling
-        </a>
-        <p className="mt-8 text-sm text-[var(--muted-foreground)]">
-          Prefer to talk to a person?{" "}
-          <a href={`tel:${site.phoneTel}`} className="font-medium text-[var(--accent-strong)]">
+        <p className="mt-4 text-sm text-[var(--muted-foreground)]">
+          Questions? Call{" "}
+          <a href={`tel:${site.phoneTel}`} className="font-semibold text-[var(--accent-strong)]">
             {site.phoneDisplay}
           </a>
+          .
         </p>
+        <div className="mt-10">
+          <AppointmentEmbed />
+        </div>
       </Container>
     </div>
   );

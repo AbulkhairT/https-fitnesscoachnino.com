@@ -32,15 +32,20 @@ export default function HomePage() {
       <section className="py-20 sm:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--muted)] lg:aspect-square">
-              <Image
-                src={doctorPhoto}
-                alt={site.doctor.name}
-                fill
-                className="object-contain object-center p-4"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            {/* Intrinsic sizing — no forced aspect box (avoids perceived horizontal stretch) */}
+            <figure className="flex justify-center lg:justify-start">
+              <div className="w-full max-w-[420px] rounded-2xl border border-[var(--border)] bg-[#eef1ef] p-3 sm:p-4">
+                <Image
+                  src={doctorPhoto}
+                  alt={site.doctor.name}
+                  width={1023}
+                  height={1023}
+                  className="h-auto w-full rounded-xl object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  priority
+                />
+              </div>
+            </figure>
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
                 Your chiropractor

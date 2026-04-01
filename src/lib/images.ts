@@ -18,6 +18,10 @@ export const heroSlides = [
 export const doctorPhoto =
   "https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/0k/0/h/images/IMG_6924_-_Copy.jpg.webp?2383d4ec0c608110e680e97e01ca7ad6";
 
+/** Original site services illustration — spinal & postural screenings */
+export const servicesPostureImage =
+  "https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/0k/0/h/5b74aac662328_services_posture.png.webp?ccc2ba660f9ff95733aa65f74d8ecc53";
+
 const G =
   "https://cdcssl.ibsrv.net/ibimg/smb/600x600_80/webmgr/0k/0/h/_SHARED";
 
