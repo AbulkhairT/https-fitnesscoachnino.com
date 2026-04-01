@@ -1,9 +1,8 @@
+import { SITE } from "@/lib/site";
+
 export default function robots() {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: "https://massagetherapy-naples.com/sitemap.xml",
+    rules: { userAgent: "*", allow: "/" },
+    sitemap: `${SITE.url}/sitemap.xml`,
   };
 }

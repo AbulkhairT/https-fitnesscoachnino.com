@@ -1,183 +1,92 @@
 import "./globals.css";
+import { Inter, Instrument_Serif } from "next/font/google";
+import { SITE } from "@/lib/site";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const siteUrl = SITE.url;
+
 export const metadata = {
-  metadataBase: new URL("https://massagetherapy-naples.com"),
-  title: "Borys Sapar, LMT — Therapeutic Massage in Naples, FL",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${SITE.name} — Fitness Coaching & Personal Training in Naples, FL`,
+    template: `%s | ${SITE.name}`,
+  },
   description:
-    "Individualized therapeutic massage in Naples, Florida. Specializing in deep tissue, trigger point, lymphatic drainage, neuromuscular, and joint massage. Assessment-driven treatment with measurable results. Text to book: (239) 272-0598.",
+    "Premium fitness coaching in Naples, FL: fat loss, strength, and performance with clear programming and accountability. Book a complimentary assessment with Max Flex Fitness.",
   keywords: [
-    "therapeutic massage Naples FL",
-    "massage therapist Naples Florida",
-    "deep tissue massage Naples",
-    "lymphatic drainage Naples FL",
-    "trigger point massage Naples",
-    "neuromuscular massage Naples",
-    "sports massage Naples FL",
-    "Borys Sapar LMT",
-    "Sapar Therapy Naples",
+    "personal trainer naples fl",
+    "fitness coach near me naples",
+    "online fitness coach naples",
+    "fat loss coach naples",
+    "muscle building coach naples",
+    "hire a fitness coach naples",
+    "fitness transformation coach",
+    "corporate wellness naples",
+    "sports performance training naples",
+    "max flex fitness",
   ],
-  authors: [{ name: "Borys Sapar" }],
   openGraph: {
-    title: "Borys Sapar, LMT — Therapeutic Massage in Naples, FL",
+    title: `${SITE.name} — Naples Fitness Coaching & Training`,
     description:
-      "Assessment-driven therapeutic massage in Naples, FL. Relief for muscle tension, pain, restricted movement, and stress. Text to book.",
-    url: "https://massagetherapy-naples.com",
-    siteName: "Sapar Therapy",
+      "Lean, strong, consistent — coaching built for real schedules in Naples, FL. Book your assessment.",
+    url: siteUrl,
+    siteName: SITE.name,
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Sapar Therapy — Therapeutic Massage in Naples, FL",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Borys Sapar, LMT — Therapeutic Massage in Naples, FL",
-    description:
-      "Assessment-driven therapeutic massage in Naples, FL. Text to book: (239) 272-0598.",
-    images: ["/og-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://massagetherapy-naples.com",
-  },
+  alternates: { canonical: siteUrl },
+  robots: { index: true, follow: true },
 };
 
-const jsonLd = {
+const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://massagetherapy-naples.com",
-  name: "Sapar Therapy",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": `${siteUrl}/#business`,
+  name: SITE.name,
   description:
-    "Individualized therapeutic massage practice in Naples, FL. Specializing in deep tissue, trigger point, lymphatic drainage, and neuromuscular massage with functional assessment and measurable results.",
-  url: "https://massagetherapy-naples.com",
-  telephone: "+12392720598",
-  email: "sapartherapy@gmail.com",
-  image: "https://massagetherapy-naples.com/og-image.jpg",
-  priceRange: "$$",
-  currenciesAccepted: "USD",
-  paymentAccepted: "Cash, Credit Card",
+    "Personal training and corporate wellness coaching in Naples, Florida.",
+  url: siteUrl,
+  telephone: SITE.phoneE164,
+  email: SITE.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "800 Seagate Dr, Unit 201",
-    addressLocality: "Naples",
-    addressRegion: "FL",
-    postalCode: "34103",
-    addressCountry: "US",
+    addressLocality: SITE.city,
+    addressRegion: SITE.region,
+    postalCode: SITE.postalCode,
+    addressCountry: SITE.country,
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 26.1501,
-    longitude: -81.7948,
+  areaServed: SITE.areaServed,
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    description: "By appointment",
   },
-  areaServed: {
-    "@type": "City",
-    name: "Naples",
-  },
-  hasMap: "https://maps.google.com/?q=800+Seagate+Dr+Unit+201+Naples+FL+34103",
-  sameAs: [],
-  founder: {
-    "@type": "Person",
-    name: "Borys Sapar",
-    jobTitle: "Licensed Massage Therapist",
-    description:
-      "International Affiliate Member of APTA, LMT license MA 104946, 10 years of experience in physical and occupational therapy.",
-  },
-  serviceType: [
-    "Therapeutic Massage",
-    "Deep Tissue Massage",
-    "Lymphatic Drainage Massage",
-    "Trigger Point Massage",
-    "Neuromuscular Massage",
-    "Joint Massage",
-  ],
-  offers: [
-    {
-      "@type": "Offer",
-      name: "Therapeutic Massage",
-      price: "140",
-      priceCurrency: "USD",
-      description: "50-minute customized therapeutic massage session",
-    },
-    {
-      "@type": "Offer",
-      name: "Deep Tissue Massage",
-      price: "130",
-      priceCurrency: "USD",
-      description: "50-minute deep tissue massage session",
-    },
-    {
-      "@type": "Offer",
-      name: "Lymphatic Drainage",
-      price: "120",
-      priceCurrency: "USD",
-      description: "50-minute lymphatic drainage massage session",
-    },
-    {
-      "@type": "Offer",
-      name: "Trigger Point Massage",
-      price: "120",
-      priceCurrency: "USD",
-      description: "50-minute trigger point massage session",
-    },
-    {
-      "@type": "Offer",
-      name: "Neuromuscular Massage",
-      price: "120",
-      priceCurrency: "USD",
-      description: "50-minute neuromuscular massage session",
-    },
-    {
-      "@type": "Offer",
-      name: "Joint Massage",
-      price: "130",
-      priceCurrency: "USD",
-      description: "50-minute joint massage session",
-    },
-  ],
-  specialOpeningHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      description: "Free consultations for children under 16 and adults 65+",
-    },
-  ],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-          rel="stylesheet"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
         />
       </head>
-      <body style={{ margin: 0, padding: 0, background: "#0e0e0e" }}>
-        {children}
-      </body>
+      <body className="font-sans pb-24 md:pb-0">{children}</body>
     </html>
   );
 }
