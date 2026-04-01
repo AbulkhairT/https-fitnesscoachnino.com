@@ -7,11 +7,11 @@ const IMG = "https://cdcssl.ibsrv.net/ibimg/smb/1600x1600_80/webmgr/0k/0/h/image
 export const logoUrl =
   "https://abetterlifechiropractic.com/storage/app/media/Logo_trimmed.png";
 
-/** Local file in /public — hero carousel first slide */
-export const heroTeamLocal = "/team.jpg";
+/** Local file in /public — group photo for staff / about sections (not mobile hero) */
+export const staffTeamPhoto = "/team.jpg";
 
-export const heroSlides = [
-  heroTeamLocal,
+/** Desktop hero carousel — landscape-friendly slides only (no wide group shot) */
+export const heroDesktopSlides = [
   `${IMG}/slide1.jpg.webp?21d5c3fe3c0a2fdbce9f68cb165eef26`,
   `${IMG}/slide2.jpg.webp?db7d4f4fdbf60b19b614eb3372d2eefb`,
   `${IMG}/slide3.jpg.webp?c71e3f758730729415095fdc7fc79879`,
@@ -20,6 +20,9 @@ export const heroSlides = [
 
 export const doctorPhoto =
   "https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/0k/0/h/images/IMG_6924_-_Copy.jpg.webp?2383d4ec0c608110e680e97e01ca7ad6";
+
+/** Mobile hero — single subject, centered; works in portrait crop (separate art direction from desktop) */
+export const heroMobileImage = doctorPhoto;
 
 /** Original site services illustration — spinal & postural screenings */
 export const servicesPostureImage =

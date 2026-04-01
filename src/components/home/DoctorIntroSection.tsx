@@ -20,7 +20,6 @@ export function DoctorIntroSection() {
                 height={1023}
                 className="h-auto w-full rounded-xl object-contain object-center"
                 sizes="(max-width: 1024px) 100vw, 400px"
-                priority
               />
             </div>
           </figure>

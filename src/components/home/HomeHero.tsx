@@ -4,37 +4,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { home } from "@/content/home";
-import { heroSlides } from "@/lib/images";
+import { heroDesktopSlides, heroMobileImage } from "@/lib/images";
 import { site } from "@/lib/site";
+import { HeroPromoCard } from "@/components/home/HeroPromoCard";
 
 export function HomeHero() {
   const [i, setI] = useState(0);
   useEffect(() => {
-    if (heroSlides.length <= 1) return;
-    const t = setInterval(() => setI((x) => (x + 1) % heroSlides.length), 8000);
+    if (heroDesktopSlides.length <= 1) return;
+    const t = setInterval(() => setI((x) => (x + 1) % heroDesktopSlides.length), 8000);
     return () => clearInterval(t);
   }, []);
 
   return (
     <section className="relative overflow-hidden bg-[var(--surface)]">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 sm:py-20 lg:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-14 lg:items-stretch">
-          <div className="flex max-w-xl flex-col justify-center lg:max-w-none">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--muted-foreground)]">
-              {home.hero.eyebrow}
-            </p>
-            <h1 className="mt-6 text-[var(--foreground)]">
-              <span className="block text-[13px] font-semibold uppercase tracking-[0.18em] text-[var(--muted-foreground)] sm:text-sm">
-                {home.hero.h1Keyword}
-              </span>
-              <span className="font-display mt-4 block text-[2.125rem] font-medium leading-[1.08] tracking-tight sm:text-5xl sm:leading-[1.05] lg:text-[3rem] lg:leading-[1.04]">
-                {home.hero.headline}
-              </span>
-            </h1>
-            <p className="mt-8 max-w-lg text-[15px] leading-[1.65] text-[var(--muted-foreground)] sm:text-[17px] sm:leading-relaxed">
-              {home.hero.subhead}
-            </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+      <div className="mx-auto max-w-[1400px] px-6 pt-12 pb-14 sm:pt-14 sm:pb-16 lg:py-24">
+        <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-14">
+          {/* Copy + CTAs + desktop promo */}
+          <div className="flex min-w-0 flex-col justify-center gap-8 lg:max-w-xl">
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--muted-foreground)]">
+                {home.hero.eyebrow}
+              </p>
+              <h1 className="mt-5 text-[var(--foreground)]">
+                <span className="block text-[13px] font-semibold uppercase tracking-[0.18em] text-[var(--muted-foreground)] sm:text-sm">
+                  {home.hero.h1Keyword}
+                </span>
+                <span className="font-display mt-4 block text-[2.125rem] font-medium leading-[1.08] tracking-tight sm:text-5xl sm:leading-[1.05] lg:text-[3rem] lg:leading-[1.04]">
+                  {home.hero.headline}
+                </span>
+              </h1>
+              <p className="mt-7 max-w-lg text-[15px] leading-[1.65] text-[var(--muted-foreground)] sm:text-[17px] sm:leading-relaxed">
+                {home.hero.subhead}
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="/appointment"
                 className="inline-flex justify-center rounded-full bg-[var(--cta)] px-10 py-4 text-center text-[15px] font-semibold text-[var(--cta-foreground)] transition hover:bg-[var(--cta-hover)]"
@@ -48,18 +52,12 @@ export function HomeHero() {
                 {home.hero.ctaSecondary} · {site.phoneDisplay}
               </a>
             </div>
-            <p className="mt-10">
-              <Link
-                href="/special-offer"
-                className="text-[13px] font-medium text-[var(--muted-foreground)] underline-offset-[5px] transition hover:text-[var(--foreground)] hover:underline"
-              >
-                {home.hero.ctaTertiary}
-              </Link>
-            </p>
+            <HeroPromoCard className="hidden lg:block" />
           </div>
 
-          <div className="relative w-full h-[460px] md:h-[520px] overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-            {heroSlides.map((src, idx) => (
+          {/* Desktop: wide carousel */}
+          <div className="relative hidden h-[min(520px,70vh)] w-full min-h-[400px] overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_1px_3px_rgba(0,0,0,0.06)] lg:block">
+            {heroDesktopSlides.map((src, idx) => (
               <div
                 key={`${src}-${idx}`}
                 className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
@@ -73,14 +71,14 @@ export function HomeHero() {
                   fill
                   priority={idx === 0}
                   className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  sizes="(max-width: 1024px) 0, 45vw"
                   quality={90}
                 />
               </div>
             ))}
-            {heroSlides.length > 1 ? (
+            {heroDesktopSlides.length > 1 ? (
               <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
-                {heroSlides.map((_, idx) => (
+                {heroDesktopSlides.map((_, idx) => (
                   <button
                     key={idx}
                     type="button"
@@ -94,6 +92,23 @@ export function HomeHero() {
               </div>
             ) : null}
           </div>
+
+          {/* Mobile: portrait art direction — single image, centered subject */}
+          <div className="w-full shrink-0 lg:hidden">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[min(100%,300px)] overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+              <Image
+                src={heroMobileImage}
+                alt={`${site.doctor.name} — ${site.name}`}
+                fill
+                priority
+                className="object-cover object-center"
+                sizes="(max-width: 1023px) min(300px, 100vw), 0"
+                quality={92}
+              />
+            </div>
+          </div>
+
+          <HeroPromoCard className="lg:hidden" />
         </div>
       </div>
     </section>

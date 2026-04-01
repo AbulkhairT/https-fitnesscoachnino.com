@@ -4,6 +4,7 @@ import { DoctorIntroSection } from "@/components/home/DoctorIntroSection";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeSeoIntro } from "@/components/home/HomeSeoIntro";
+import { HomeStaffSection } from "@/components/home/HomeStaffSection";
 import { LocationContactBlock } from "@/components/home/LocationContactBlock";
 import { PhasesSection } from "@/components/home/PhasesSection";
 import { ProblemSolution } from "@/components/home/ProblemSolution";
@@ -44,6 +45,7 @@ export default function HomePage() {
       <HomeHero />
       <HomeSeoIntro />
       <TrustStrip />
+      <HomeStaffSection />
       <ProblemSolution />
       <CTABand variant="default" />
       <ServicesHomeGrid />

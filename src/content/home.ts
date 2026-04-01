@@ -13,6 +13,15 @@ export const home = {
     ctaPrimary: "Book your visit",
     ctaSecondary: "Call",
     ctaTertiary: "New patient offer",
+    promoTeaser:
+      "Web-only savings for your first visit — details when you book or call.",
+  },
+  staff: {
+    eyebrow: "About the practice",
+    headline: "Meet the team",
+    body:
+      "From your first call to checkout, our front desk and clinical team work together to keep visits smooth, welcoming, and on time.",
+    linkLabel: "Meet the staff",
   },
   trust: {
     headline: "Why people choose us",
