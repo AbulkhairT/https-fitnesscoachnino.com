@@ -1,0 +1,53 @@
+export const site = {
+  name: "A Better Life Chiropractic",
+  shortName: "A Better Life Chiropractic",
+  tagline: "Superior health and balance through chiropractic",
+  description:
+    "Family chiropractic care in Naples, FL — relief, corrective, and wellness phases. Dr. Deanna Barbaro and team.",
+  url: "https://abetterlifechiropractic.com",
+  phoneDisplay: "(239) 263-3369",
+  phoneTel: "2392633369",
+  email: "info@abetterlifechiropractic.com",
+  address: {
+    line1: "661 Goodlette Road North",
+    line2: "Ste 108",
+    city: "Naples",
+    state: "FL",
+    zip: "34102",
+  },
+  doctor: {
+    name: "Dr. Deanna Barbaro",
+    title: "Chiropractor",
+  },
+  massageLicense: "MM#13986",
+  hours: [
+    { label: "Monday", value: "8:30 AM – 10:30 AM · 3:30 PM – 6:00 PM" },
+    { label: "Tuesday", value: "Closed AM · 3:30 PM – 6:00 PM" },
+    { label: "Wednesday", value: "8:30 AM – 10:30 AM · 3:30 PM – 6:00 PM" },
+    { label: "Thursday", value: "8:30 AM – 10:30 AM · 3:30 PM – 6:00 PM" },
+    { label: "Friday", value: "Closed" },
+    { label: "Saturday", value: "Closed" },
+    { label: "Sunday", value: "Closed" },
+  ],
+  external: {
+    appointment: "https://abetterlifechiropractic.com/appointment",
+    onlineForms: "https://abetterlifechiropractic.com/online-forms.html",
+    spineSimulator: "https://abetterlifechiropractic.com/3d-spine-simulator",
+    originalBlog: "https://abetterlifechiropractic.com/blog",
+  },
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=661+Goodlette+Road+North+Ste+108+Naples+FL+34102&hl=en&z=16&output=embed",
+  mapLink:
+    "https://maps.google.com/?q=661+Goodlette+Road+North+Ste+108+Naples+FL+34102",
+  newPatientOffer: {
+    headline: "New patient web offer",
+    detail: "$207 consultation, examination & X-rays",
+    disclaimer:
+      "Other services at usual fees. You may refuse or be reimbursed for services within 72 hours of responding to this offer per Florida advertising rules. Insurance billing not applicable to web offer.",
+  },
+} as const;
+
+export function fullAddress(): string {
+  const { line1, line2, city, state, zip } = site.address;
+  return `${line1}, ${line2}, ${city}, ${state} ${zip}`;
+}

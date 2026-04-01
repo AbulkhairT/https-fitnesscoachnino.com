@@ -1,103 +1,154 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { HomeHero } from "@/components/sections/HomeHero";
+import { Container } from "@/components/ui/Container";
+import { serviceHighlights, servicePillars } from "@/content/services";
+import { testimonials } from "@/content/testimonials";
+import { doctorPhoto } from "@/lib/images";
+import { site } from "@/lib/site";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Home",
+  description: site.description,
+};
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <>
+      <HomeHero />
+      <section className="border-y border-[var(--border)] bg-[var(--surface)] py-12">
+        <Container>
+          <ul className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-center text-sm text-[var(--muted-foreground)]">
+            {serviceHighlights.map((t) => (
+              <li key={t} className="flex items-center gap-2">
+                <span className="h-1 w-1 rounded-full bg-[var(--accent)]" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+      <section className="py-20 sm:py-28">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--muted)] lg:aspect-square">
+              <Image
+                src={doctorPhoto}
+                alt={site.doctor.name}
+                fill
+                className="object-contain object-center p-4"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
+                Your chiropractor
+              </p>
+              <h2 className="font-display mt-4 text-3xl sm:text-4xl">
+                {site.doctor.name}
+              </h2>
+              <p className="mt-6 leading-relaxed text-[var(--muted-foreground)]">
+                Chiropractic care is about more than making pain disappear — it
+                is understanding your body and supporting your nervous system
+                through precise, modern care rooted in respect for how you heal.
+              </p>
+              <p className="mt-4 leading-relaxed text-[var(--muted-foreground)]">
+                Whether you are recovering from an accident, managing chronic
+                tension, or pursuing better energy for your family, we take time
+                to explain findings and build a plan that fits your goals.
+              </p>
+              <Link
+                href="/about/dr-barbaro"
+                className="mt-8 inline-flex text-sm font-semibold text-[var(--accent-strong)]"
+              >
+                Meet {site.doctor.name} →
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className="bg-[var(--surface-2)] py-20 sm:py-28">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
+              How we work
+            </p>
+            <h2 className="font-display mt-4 text-3xl sm:text-4xl">
+              Three phases of care
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            {servicePillars.map((p) => (
+              <article
+                key={p.title}
+                className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
+              >
+                <h3 className="font-display text-xl">{p.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">
+                  {p.summary}
+                </p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-12 text-center">
+            <Link
+              href="/services"
+              className="text-sm font-semibold text-[var(--accent-strong)]"
+            >
+              Explore services →
+            </Link>
+          </p>
+        </Container>
+      </section>
+      <section className="py-20 sm:py-28">
+        <Container>
+          <h2 className="font-display text-center text-3xl sm:text-4xl">
+            What patients say
+          </h2>
+          <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-10">
+            {testimonials.map((t) => (
+              <blockquote key={t.name}>
+                <p className="text-lg leading-relaxed text-[var(--foreground)]">
+                  “{t.quote}”
+                </p>
+                <footer className="mt-6 text-sm font-medium text-[var(--muted-foreground)]">
+                  — {t.name}, {t.place}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+          <p className="mt-8 text-center">
+            <Link href="/testimonials" className="text-sm font-semibold text-[var(--accent-strong)]">
+              More testimonials →
+            </Link>
+          </p>
+        </Container>
+      </section>
+      <section className="border-t border-[var(--border)] bg-[var(--surface)] py-16">
+        <Container className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <h2 className="font-display text-2xl">Ready to start?</h2>
+            <p className="mt-2 text-[var(--muted-foreground)]">
+              Call or request your appointment online today.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="rounded-full bg-[var(--cta)] px-8 py-3 text-sm font-semibold text-[var(--cta-foreground)]"
+            >
+              {site.phoneDisplay}
+            </a>
+            <Link
+              href="/contact"
+              className="rounded-full border border-[var(--border)] px-8 py-3 text-sm font-semibold"
+            >
+              Hours &amp; location
+            </Link>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
