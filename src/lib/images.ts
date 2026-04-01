@@ -7,8 +7,11 @@ const IMG = "https://cdcssl.ibsrv.net/ibimg/smb/1600x1600_80/webmgr/0k/0/h/image
 export const logoUrl =
   "https://abetterlifechiropractic.com/storage/app/media/Logo_trimmed.png";
 
+/** Local file in /public — replace `hero-home.webp` to change the default hero image */
+export const heroHomeLocal = "/hero-home.webp";
+
 export const heroSlides = [
-  `${IMG}/banner001.jpg.webp?d7ba91f85a9ef5a88546b511292187b7`,
+  heroHomeLocal,
   `${IMG}/slide1.jpg.webp?21d5c3fe3c0a2fdbce9f68cb165eef26`,
   `${IMG}/slide2.jpg.webp?db7d4f4fdbf60b19b614eb3372d2eefb`,
   `${IMG}/slide3.jpg.webp?c71e3f758730729415095fdc7fc79879`,

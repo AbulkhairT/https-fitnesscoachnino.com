@@ -59,37 +59,35 @@ export function HomeHero() {
             </p>
           </div>
 
-          {/* Landscape frame ≈ slide aspect: object-contain fills the box without cropping; tall towers caused tiny letterboxed images */}
-          <div className="relative w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] aspect-[4/3] sm:aspect-[3/2] lg:aspect-video">
+          {/* Fixed-height hero: fills frame (object-cover); swap /public/hero-home.jpg anytime */}
+          <div className="relative h-[420px] w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
             {heroSlides.map((src, idx) => (
               <div
                 key={src}
-                className={`absolute inset-0 transition-opacity duration-[1400ms] ease-out ${
+                className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
                   idx === i ? "opacity-100" : "opacity-0"
                 }`}
                 aria-hidden={idx !== i}
               >
-                <div className="absolute inset-x-2 inset-y-2 bottom-11 sm:inset-x-3 sm:inset-y-3 sm:bottom-12 lg:inset-[10px] lg:bottom-14">
-                  <Image
-                    src={src}
-                    alt={`${site.name} chiropractic team and office in Naples, Florida`}
-                    fill
-                    priority={idx === 0}
-                    className="object-contain object-center"
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    quality={92}
-                  />
-                </div>
+                <Image
+                  src={src}
+                  alt={`${site.name} — Naples, FL chiropractic`}
+                  fill
+                  priority={idx === 0}
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  quality={90}
+                />
               </div>
             ))}
             {heroSlides.length > 1 ? (
-              <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
+              <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
                 {heroSlides.map((_, idx) => (
                   <button
                     key={idx}
                     type="button"
                     className={`h-0.5 rounded-full transition-all ${
-                      idx === i ? "w-6 bg-[var(--foreground)]/50" : "w-1 bg-[var(--foreground)]/15"
+                      idx === i ? "w-6 bg-white/90 shadow-sm" : "w-1 bg-white/40"
                     }`}
                     aria-label={`Photo ${idx + 1}`}
                     onClick={() => setI(idx)}
