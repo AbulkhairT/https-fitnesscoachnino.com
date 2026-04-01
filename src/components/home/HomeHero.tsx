@@ -59,7 +59,8 @@ export function HomeHero() {
             </p>
           </div>
 
-          <div className="relative min-h-[min(56vw,340px)] w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] sm:min-h-[380px] lg:min-h-[min(100%,480px)]">
+          {/* object-contain + generous height so entire slide is visible (no object-cover face crops) */}
+          <div className="relative w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] min-h-[min(78vw,420px)] sm:min-h-[460px] lg:min-h-[min(74vh,680px)] lg:max-h-[760px]">
             {heroSlides.map((src, idx) => (
               <div
                 key={src}
@@ -68,25 +69,27 @@ export function HomeHero() {
                 }`}
                 aria-hidden={idx !== i}
               >
-                <Image
-                  src={src}
-                  alt={`${site.name} chiropractic team and office in Naples, Florida`}
-                  fill
-                  priority={idx === 0}
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={90}
-                />
+                <div className="absolute left-3 right-3 top-3 bottom-14 sm:left-5 sm:right-5 sm:top-5 sm:bottom-16 lg:left-6 lg:right-6 lg:top-6 lg:bottom-20">
+                  <Image
+                    src={src}
+                    alt={`${site.name} chiropractic team and office in Naples, Florida`}
+                    fill
+                    priority={idx === 0}
+                    className="object-contain object-center"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    quality={92}
+                  />
+                </div>
               </div>
             ))}
             {heroSlides.length > 1 ? (
-              <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-1.5">
+              <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
                 {heroSlides.map((_, idx) => (
                   <button
                     key={idx}
                     type="button"
                     className={`h-0.5 rounded-full transition-all ${
-                      idx === i ? "w-6 bg-white/90" : "w-1 bg-white/35"
+                      idx === i ? "w-6 bg-[var(--foreground)]/50" : "w-1 bg-[var(--foreground)]/15"
                     }`}
                     aria-label={`Photo ${idx + 1}`}
                     onClick={() => setI(idx)}
