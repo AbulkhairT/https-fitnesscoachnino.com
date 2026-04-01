@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f8f6;
-  --foreground: #1a1f1c;
+  --background: #fafaf8;
+  --foreground: #141816;
   --surface: #ffffff;
-  --surface-2: #eef1ec;
-  --muted: #e2e8e3;
-  --muted-foreground: #5a635e;
-  --border: #d4dcd6;
-  --accent: #2d6a5c;
-  --accent-strong: #1d4a40;
-  --cta: #1a1f1c;
-  --cta-hover: #2c332f;
-  --cta-foreground: #f7f8f6;
+  --surface-2: #f0f2ef;
+  --muted: #e5e9e6;
+  --muted-foreground: #5c6460;
+  --border: #e0e5e1;
+  --accent: #2a6b5e;
+  --accent-strong: #1a4a3f;
+  --cta: #141816;
+  --cta-hover: #2a302c;
+  --cta-foreground: #fafaf8;
 }
 
 @theme inline {
@@ -27,11 +27,16 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  letter-spacing: -0.011em;
 }
 
 .font-display {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), "Iowan Old Style", "Palatino Linotype",
+    Georgia, serif;
+  letter-spacing: -0.02em;
 }
 
 ::selection {

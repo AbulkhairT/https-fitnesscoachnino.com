@@ -1,9 +1,9 @@
 export const site = {
   name: "A Better Life Chiropractic",
   shortName: "A Better Life Chiropractic",
-  tagline: "Superior health and balance through chiropractic",
+  tagline: "Move better, hurt less — clear chiropractic care in Naples",
   description:
-    "Family chiropractic care in Naples, FL — relief, corrective, and wellness phases. Dr. Deanna Barbaro and team.",
+    "Naples chiropractor helping you recover from pain and injury without relying on medication. Dr. Deanna Barbaro — relief, corrective care, massage, family visits.",
   url: "https://abetterlifechiropractic.com",
   phoneDisplay: "(239) 263-3369",
   phoneTel: "2392633369",

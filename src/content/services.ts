@@ -2,17 +2,17 @@ export const servicePillars = [
   {
     title: "Relief care",
     summary:
-      "Reduce pain and discomfort quickly with focused adjustments and supportive recommendations tailored to your presentation.",
+      "First priority: calm symptoms and improve how you move day to day — with a plan, not random visits.",
   },
   {
     title: "Corrective care",
     summary:
-      "Address underlying patterns of spinal stress so your body can stabilize — not just feel better for a day.",
+      "Next: work on the patterns behind recurring flare-ups so relief lasts longer than a weekend.",
   },
   {
     title: "Wellness care",
     summary:
-      "Maintain motion, balance, and resilience for work, sport, and family life with periodic check-ins.",
+      "Ongoing: stay ahead of stiffness and strain — tuned to your work, travel, and training.",
   },
 ] as const;
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -7,7 +7,7 @@ import { StickyCallBar } from "@/components/layout/StickyCallBar";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { site } from "@/lib/site";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${sourceSerif.variable} min-h-screen antialiased`}
+        className={`${inter.variable} ${sourceSerif.variable} min-h-screen antialiased`}
       >
         <LocalBusinessJsonLd />
         <a
@@ -50,7 +50,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <SiteHeader />
-        <main id="main" className="pb-24 lg:pb-0">
+        <main id="main" className="pb-24 lg:pb-20">
           {children}
         </main>
         <SiteFooter />
