@@ -60,7 +60,7 @@ export function HomeHero() {
           </div>
 
           {/* Fixed-height hero: fills frame (object-cover); swap /public/hero-home.jpg anytime */}
-          <div className="relative h-[420px] w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+          <div className="relative w-full h-[460px] md:h-[520px] overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
             {heroSlides.map((src, idx) => (
               <div
                 key={src}
