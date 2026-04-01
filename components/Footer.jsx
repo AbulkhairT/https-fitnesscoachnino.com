@@ -9,8 +9,13 @@ export function Footer() {
         <div>
           <p className="font-display text-lg font-medium text-ink">{SITE.name}</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
-            {SITE.legalName}. Performance coaching and corporate wellness in{" "}
-            {SITE.city}, {SITE.region} — serving {SITE.areaServed}.
+            {SITE.legalName}. Max Flex Fitness Personal Training & Corporate
+            Wellness Solutions — {SITE.city}, {SITE.region}. Serving{" "}
+            {SITE.areaServed}.
+          </p>
+          <p className="mt-4 text-sm text-muted">
+            Voted Top 3 personal trainers in Naples (2023–2024) — Best of the Best
+            (2023–2025).
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -52,7 +57,7 @@ export function Footer() {
           </div>
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted">
-              Explore
+              Connect
             </p>
             <Link
               href="/#programs"
@@ -60,17 +65,27 @@ export function Footer() {
             >
               Programs
             </Link>
-            <Link
-              href="/services/personal-training"
+            <a
+              href={SITE.storeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 block text-sm text-muted hover:text-ink"
             >
-              One-on-one coaching
-            </Link>
+              Your Awesome Store
+            </a>
+            <a
+              href={SITE.youtubeChannelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-sm text-muted hover:text-ink"
+            >
+              YouTube channel
+            </a>
             <Link
               href="/blog"
               className="mt-2 block text-sm text-muted hover:text-ink"
             >
-              Journal
+              Wellness journal
             </Link>
             <Link
               href="/contact"
@@ -85,10 +100,7 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} {SITE.legalName}
         </span>
-        <span className="text-right">
-          fitnesscoachnino.com · Local fitness coaching · {SITE.city},{" "}
-          {SITE.region}
-        </span>
+        <span className="text-right">fitnesscoachnino.com</span>
       </div>
     </footer>
   );

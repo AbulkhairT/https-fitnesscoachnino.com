@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SITE, telHref, smsHref } from "@/lib/site";
 import { CTA } from "@/lib/cta";
+import { MEDIA } from "@/lib/media";
 
 export function Hero() {
   return (
@@ -9,7 +10,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl gap-14 px-5 py-20 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:px-8 md:py-28">
         <div className="flex flex-col justify-center">
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-            Naples, FL · Performance coaching
+            Naples, FL · Voted Best of the Best — Top 3 (2023–2025)
           </p>
           <h1 className="font-display text-[2.35rem] font-medium leading-[1.02] tracking-tight text-ink md:text-5xl lg:text-[3.1rem]">
             Build a lean, strong body — and keep it.
@@ -19,8 +20,9 @@ export function Hero() {
             strength, and confidence — without chaos.
           </p>
           <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted">
-            {SITE.name} is built for adults who want results that survive busy
-            weeks — led by {SITE.leadTrainer}, {SITE.certifications.slice(0, 2).join(" · ")}.
+            {SITE.name} — personal training & corporate wellness. Led by Master
+            Trainer {SITE.leadTrainer}. Sports performance, injury prevention, and
+            behavior change that lasts.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -47,8 +49,8 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-8 text-sm text-muted">
-            <span className="text-ink/80">Value prop · </span>
-            Stronger week over week — with a plan that fits your real schedule.
+            <span className="text-ink/80">Complimentary assessment · </span>
+            In person or virtual — schedule anytime.
           </p>
           <p className="mt-4 text-sm text-muted">
             Explore{" "}
@@ -60,10 +62,12 @@ export function Hero() {
             </Link>
             ,{" "}
             <Link
-              href="/services/personal-training"
+              href={SITE.storeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-medium text-accent hover:underline"
             >
-              1:1 coaching
+              the store
             </Link>
             , and{" "}
             <Link
@@ -79,10 +83,10 @@ export function Hero() {
           <div className="overflow-hidden rounded-2xl bg-surface shadow-soft ring-1 ring-line">
             <div className="relative aspect-[4/5] w-full">
               <Image
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=85&fit=crop"
-                alt="Personal trainer coaching strength training in a professional training facility"
+                src={MEDIA.hero}
+                alt={`${SITE.leadTrainer} — personal training and coaching at Max Flex Fitness, Naples FL`}
                 fill
-                className="object-cover object-[center_35%]"
+                className="object-cover object-[center_25%]"
                 sizes="(max-width: 768px) 100vw, 42vw"
                 priority
               />
@@ -96,7 +100,7 @@ export function Hero() {
               {SITE.ratingLabel}
             </p>
             <p className="mt-3 text-xs text-muted">
-              {SITE.certifications.join(" · ")}
+              NASM-CPT · NASM-MT · NASM-CES · NASM-PES · NASM-BCS
             </p>
           </div>
         </div>

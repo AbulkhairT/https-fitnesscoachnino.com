@@ -7,12 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#0f1111",
-        muted: "#5c6368",
-        surface: "#f6f6f4",
-        line: "#e6e4df",
-        accent: "#1f5b4c",
-        "accent-hover": "#18493c",
+        /* Brand palette aligned with live site: warm brown + amber/orange accent */
+        ink: "#231f1e",
+        muted: "#6b6560",
+        surface: "#faf8f5",
+        line: "#e5e0d8",
+        accent: "#f3a024",
+        "accent-hover": "#d88a12",
+        brandblue: "#005bac",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

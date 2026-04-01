@@ -6,22 +6,26 @@ const programs = [
   {
     slug: "personal-training",
     title: "1:1 coaching",
-    outcome: "Lean out, build muscle, and train with intent — not guesswork.",
+    outcome:
+      "Lean out, build muscle, and train with intent — not guesswork. Life-changing results built on consistency.",
   },
   {
     slug: "corrective-exercise",
     title: "Movement & resilience",
-    outcome: "Rebuild positions, reduce nagging pain, earn heavier loads safely.",
+    outcome:
+      "Rebuild positions, reduce nagging pain, earn heavier loads safely — injury prevention built in.",
   },
   {
     slug: "sports-performance",
     title: "Performance",
-    outcome: "Speed, power, and durability — programmed like an athlete.",
+    outcome:
+      "Sports performance coaching: speed, power, and durability for athletes who train with purpose.",
   },
   {
     slug: "corporate-wellness",
-    title: "Corporate",
-    outcome: "Teams that move better, manage stress, and show up sharper.",
+    title: "Corporate wellness",
+    outcome:
+      "Stress management (yoga & meditation), team-building bootcamps, and nutrition lunch-and-learns — customized for your team.",
   },
 ];
 
@@ -35,8 +39,12 @@ export function ProgramsGrid() {
               Programs
             </p>
             <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink md:text-[2.75rem] md:leading-[1.08]">
-              Four tracks. One standard: measurable progress.
+              Personal training & corporate wellness — customized and science-backed.
             </h2>
+            <p className="mt-6 text-[15px] leading-relaxed text-muted">
+              {SITE.name} Personal Training & Corporate Wellness Solutions — programs
+              tailored to your goals, schedule, and training history.
+            </p>
           </div>
           <a
             href={SITE.bookingUrl}

@@ -8,4 +8,6 @@ Next.js (App Router) + Tailwind CSS marketing site for [fitnesscoachnino.com](ht
 - `npm run build` — production build
 - `npm start` — run production server
 
-Update business constants in `lib/site.js` (phone, email, booking URL).
+Update business constants in `lib/site.js` (phone, email, booking URL, store, YouTube).
+
+Original brand photography and NASM badge assets are in `public/images/original/` (sourced from the live site CDN). Paths are centralized in `lib/media.js`.
