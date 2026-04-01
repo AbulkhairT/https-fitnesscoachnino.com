@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/content/blog";
 import { careArticles } from "@/content/care-articles";
+import { conditions } from "@/content/conditions";
 import { site } from "@/lib/site";
 
 const staticPaths = [
@@ -25,6 +26,7 @@ const staticPaths = [
   "/spine-simulator",
   "/appointment",
   "/community",
+  "/conditions",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -49,6 +51,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.65,
+    });
+  }
+  for (const c of conditions) {
+    entries.push({
+      url: `${base}/conditions/${c.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
     });
   }
   return entries;

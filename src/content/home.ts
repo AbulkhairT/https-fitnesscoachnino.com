@@ -5,6 +5,8 @@
 export const home = {
   hero: {
     eyebrow: "Naples, Florida",
+    /** First line of H1 — primary local keyword */
+    h1Keyword: "Chiropractor in Naples, Florida",
     headline: "Relief that lasts — without living on medication.",
     subhead:
       "Back pain, neck tension, headaches, injury recovery. Dr. Deanna Barbaro explains what’s wrong, adjusts with precision, and builds a plan you actually understand.",
@@ -49,18 +51,22 @@ export const home = {
     cards: [
       {
         title: "Back & neck pain",
+        href: "/conditions/back-pain",
         outcome: "Less stiffness and fewer flare-ups so you can sit, sleep, and move with more ease.",
       },
       {
         title: "Headaches & tension",
+        href: "/conditions/migraines-headaches",
         outcome: "Identify contributing patterns and address what your body is holding onto.",
       },
       {
         title: "Injury & auto accidents",
+        href: "/conditions/auto-accident-injury",
         outcome: "Structured support through recovery with documentation and a clear path forward.",
       },
       {
         title: "Family & wellness",
+        href: "/services",
         outcome: "From kids to parents — care that fits your household and your schedule.",
       },
     ],

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { home } from "@/content/home";
+import { homeSeo } from "@/content/home-seo";
 import { site } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { SectionShell } from "@/components/ui/SectionShell";
@@ -17,6 +18,7 @@ export function LocationContactBlock() {
               {home.location.headline}
             </h2>
             <p className="mt-4 text-[var(--muted-foreground)]">{home.location.subhead}</p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">{homeSeo.serving}</p>
             <address className="mt-8 not-italic text-base leading-relaxed">
               {site.address.line1}
               <br />

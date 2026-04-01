@@ -24,10 +24,20 @@ export function ServicesHomeGrid() {
               key={card.title}
               className="flex flex-col rounded-2xl border border-[var(--border)] bg-[var(--background)] p-8 transition hover:border-[var(--foreground)]/10"
             >
-              <h3 className="font-display text-xl text-[var(--foreground)]">{card.title}</h3>
+              <h3 className="font-display text-xl text-[var(--foreground)]">
+                <Link href={card.href} className="hover:underline">
+                  {card.title}
+                </Link>
+              </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-[var(--muted-foreground)]">
                 {card.outcome}
               </p>
+              <Link
+                href={card.href}
+                className="mt-6 text-sm font-medium text-[var(--accent-strong)] underline-offset-4 hover:underline"
+              >
+                Learn more
+              </Link>
             </li>
           ))}
         </ul>

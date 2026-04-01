@@ -28,6 +28,17 @@ export const mainNav: NavEntry[] = [
     ],
   },
   {
+    label: "Conditions",
+    href: "/conditions",
+    children: [
+      { label: "Back pain", href: "/conditions/back-pain" },
+      { label: "Neck pain", href: "/conditions/neck-pain" },
+      { label: "Sciatica", href: "/conditions/sciatica" },
+      { label: "Headaches & migraines", href: "/conditions/migraines-headaches" },
+      { label: "Auto accident injuries", href: "/conditions/auto-accident-injury" },
+    ],
+  },
+  {
     label: "Chiropractic & you",
     href: "/care",
     children: [

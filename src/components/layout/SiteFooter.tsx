@@ -48,6 +48,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/conditions" className="hover:text-[var(--accent-strong)]">
+                Conditions we treat
+              </Link>
+            </li>
+            <li>
               <Link href="/spine-simulator" className="hover:text-[var(--accent-strong)]">
                 3D spine simulator
               </Link>
