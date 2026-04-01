@@ -59,8 +59,8 @@ export function HomeHero() {
             </p>
           </div>
 
-          {/* object-contain + generous height so entire slide is visible (no object-cover face crops) */}
-          <div className="relative w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] min-h-[min(78vw,420px)] sm:min-h-[460px] lg:min-h-[min(74vh,680px)] lg:max-h-[760px]">
+          {/* Landscape frame ≈ slide aspect: object-contain fills the box without cropping; tall towers caused tiny letterboxed images */}
+          <div className="relative w-full overflow-hidden rounded-2xl bg-[var(--surface-2)] aspect-[4/3] sm:aspect-[3/2] lg:aspect-video">
             {heroSlides.map((src, idx) => (
               <div
                 key={src}
@@ -69,7 +69,7 @@ export function HomeHero() {
                 }`}
                 aria-hidden={idx !== i}
               >
-                <div className="absolute left-3 right-3 top-3 bottom-14 sm:left-5 sm:right-5 sm:top-5 sm:bottom-16 lg:left-6 lg:right-6 lg:top-6 lg:bottom-20">
+                <div className="absolute inset-x-2 inset-y-2 bottom-11 sm:inset-x-3 sm:inset-y-3 sm:bottom-12 lg:inset-[10px] lg:bottom-14">
                   <Image
                     src={src}
                     alt={`${site.name} chiropractic team and office in Naples, Florida`}
