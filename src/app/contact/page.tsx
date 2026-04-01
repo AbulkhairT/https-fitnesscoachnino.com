@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { fullAddress, site } from "@/lib/site";
 
@@ -56,14 +57,12 @@ export default function ContactPage() {
                 ))}
               </ul>
             </div>
-            <a
-              href={site.external.appointment}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/appointment"
               className="inline-flex rounded-full bg-[var(--cta)] px-8 py-3 text-sm font-semibold text-[var(--cta-foreground)]"
             >
               Request appointment
-            </a>
+            </Link>
           </div>
           <div className="overflow-hidden rounded-2xl border border-[var(--border)]">
             <iframe

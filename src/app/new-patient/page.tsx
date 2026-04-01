@@ -29,14 +29,9 @@ export default function NewPatientPage() {
             {site.phoneDisplay}
           </a>{" "}
           or{" "}
-          <a
-            href={site.external.appointment}
-            className="font-medium text-[var(--accent-strong)]"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <Link href="/appointment" className="font-medium text-[var(--accent-strong)]">
             request an appointment online
-          </a>
+          </Link>
           .
         </p>
         <ul className="mt-12 space-y-3">

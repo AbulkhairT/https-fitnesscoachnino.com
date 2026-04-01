@@ -101,14 +101,12 @@ export function SiteHeader() {
           >
             Call
           </a>
-          <a
-            href={site.external.appointment}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/appointment"
             className="inline-flex rounded-full bg-[var(--cta)] px-4 py-2 text-sm font-medium text-[var(--cta-foreground)] hover:bg-[var(--cta-hover)]"
           >
             Book
-          </a>
+          </Link>
           <button
             type="button"
             className="rounded-full p-2 lg:hidden"

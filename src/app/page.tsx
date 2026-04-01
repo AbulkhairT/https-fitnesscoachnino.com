@@ -146,6 +146,12 @@ export default function HomePage() {
               {site.phoneDisplay}
             </a>
             <Link
+              href="/appointment"
+              className="rounded-full border border-[var(--border)] px-8 py-3 text-sm font-semibold"
+            >
+              Request appointment
+            </Link>
+            <Link
               href="/contact"
               className="rounded-full border border-[var(--border)] px-8 py-3 text-sm font-semibold"
             >

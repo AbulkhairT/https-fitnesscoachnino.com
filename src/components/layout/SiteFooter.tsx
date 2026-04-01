@@ -57,6 +57,11 @@ export function SiteFooter() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link href="/community" className="hover:text-[var(--accent-strong)]">
+                Community content
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -92,6 +97,29 @@ export function SiteFooter() {
           <p>
             {site.doctor.name} · Chiropractor · Naples, FL {site.address.zip}
           </p>
+        </Container>
+      </div>
+      <div className="bg-[var(--foreground)] py-4 text-center text-xs text-white/90">
+        <Container className="flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
+          <a
+            href={site.external.imatrixCopyright}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:underline"
+          >
+            Copyright © {new Date().getFullYear()} MH Sub I, LLC dba iMatrix.
+          </a>
+          <span className="hidden text-white/40 sm:inline" aria-hidden>
+            |
+          </span>
+          <a
+            href={site.external.adminPortal}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-white hover:underline"
+          >
+            Admin log in
+          </a>
         </Container>
       </div>
     </footer>

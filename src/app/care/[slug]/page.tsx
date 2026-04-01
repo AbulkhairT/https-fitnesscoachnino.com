@@ -43,14 +43,12 @@ export default async function CareArticlePage({ params }: Props) {
           >
             Call {site.phoneDisplay}
           </a>
-          <a
-            href={site.external.appointment}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/appointment"
             className="rounded-full border border-[var(--border)] px-8 py-3 text-sm font-semibold"
           >
             Book appointment
-          </a>
+          </Link>
         </div>
       </Container>
     </article>

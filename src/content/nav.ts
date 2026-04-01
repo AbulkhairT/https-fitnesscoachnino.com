@@ -1,3 +1,5 @@
+import { communityNavChildren } from "@/content/community";
+
 export type NavChild = { label: string; href: string };
 export type NavEntry = { label: string; href?: string; children?: NavChild[] };
 
@@ -44,4 +46,9 @@ export const mainNav: NavEntry[] = [
   { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+  {
+    label: "Community",
+    href: "/community",
+    children: communityNavChildren,
+  },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { heroSlides } from "@/lib/images";
 import { site } from "@/lib/site";
@@ -76,14 +77,12 @@ export function HomeHero() {
             >
               Call {site.phoneDisplay}
             </a>
-            <a
-              href={site.external.appointment}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/appointment"
               className="inline-flex rounded-full border border-[var(--border)] px-7 py-3 text-sm font-semibold"
             >
               Request appointment
-            </a>
+            </Link>
             <a
               href="/special-offer"
               className="inline-flex rounded-full border border-transparent px-7 py-3 text-sm font-semibold text-[var(--accent-strong)] underline-offset-4 hover:underline"

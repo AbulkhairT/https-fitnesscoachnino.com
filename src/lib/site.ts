@@ -30,10 +30,14 @@ export const site = {
     { label: "Sunday", value: "Closed" },
   ],
   external: {
+    /** Legacy hosted form — prefer in-app /appointment */
     appointment: "https://abetterlifechiropractic.com/appointment",
     onlineForms: "https://abetterlifechiropractic.com/online-forms.html",
     spineSimulator: "https://abetterlifechiropractic.com/3d-spine-simulator",
     originalBlog: "https://abetterlifechiropractic.com/blog",
+    /** iMatrix / Chiromatrix site admin (staff only) */
+    adminPortal: "https://portal.chiromatrixbase.com",
+    imatrixCopyright: "https://www.chiromatrix.com",
   },
   mapEmbedUrl:
     "https://maps.google.com/maps?q=661+Goodlette+Road+North+Ste+108+Naples+FL+34102&hl=en&z=16&output=embed",

@@ -24,6 +24,7 @@ const staticPaths = [
   "/special-offer",
   "/spine-simulator",
   "/appointment",
+  "/community",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

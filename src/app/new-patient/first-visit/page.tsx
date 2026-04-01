@@ -26,14 +26,12 @@ export default function FirstVisitPage() {
           reports you already have. Wear comfortable clothing that allows
           movement of the neck and low back.
         </p>
-        <a
-          href={site.external.appointment}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          href="/appointment"
           className="mt-10 inline-flex rounded-full bg-[var(--cta)] px-8 py-3 text-sm font-semibold text-[var(--cta-foreground)]"
         >
           Schedule now
-        </a>
+        </Link>
       </Container>
     </div>
   );

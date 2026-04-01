@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
 
@@ -27,14 +28,12 @@ export default function SpecialOfferPage() {
         <p className="mt-6 text-sm leading-relaxed text-[var(--muted-foreground)]">
           {site.newPatientOffer.disclaimer}
         </p>
-        <a
-          href={site.external.appointment}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          href="/appointment"
           className="mt-10 inline-flex rounded-full bg-[var(--cta)] px-8 py-3 text-sm font-semibold text-[var(--cta-foreground)]"
         >
           Request appointment
-        </a>
+        </Link>
       </Container>
     </div>
   );

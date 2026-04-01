@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export function StickyCallBar() {
@@ -12,14 +13,12 @@ export function StickyCallBar() {
         >
           Call now
         </a>
-        <a
-          href={site.external.appointment}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          href="/appointment"
           className="flex-1 rounded-full bg-[var(--cta)] py-3 text-center text-sm font-semibold text-[var(--cta-foreground)] shadow-lg"
         >
           Book online
-        </a>
+        </Link>
       </div>
     </div>
   );
