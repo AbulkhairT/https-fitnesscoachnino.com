@@ -1,24 +1,11 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { home } from "@/content/home";
-import { heroSlides } from "@/lib/images";
 import { site } from "@/lib/site";
-import { Container } from "@/components/ui/Container";
 
 export function HomeHero() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    if (heroSlides.length <= 1) return;
-    const t = setInterval(() => setI((x) => (x + 1) % heroSlides.length), 8000);
-    return () => clearInterval(t);
-  }, []);
-
   return (
     <section className="relative overflow-hidden bg-[var(--surface)]">
-      <Container className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 sm:py-20 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-14 lg:items-stretch">
           <div className="flex max-w-xl flex-col justify-center lg:max-w-none">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--muted-foreground)]">
@@ -59,45 +46,15 @@ export function HomeHero() {
             </p>
           </div>
 
-          {/* Fixed-height hero: fills frame (object-cover); swap /public/hero-home.jpg anytime */}
-          <div className="relative w-full h-[460px] md:h-[520px] overflow-hidden rounded-2xl bg-[var(--surface-2)] shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-            {heroSlides.map((src, idx) => (
-              <div
-                key={src}
-                className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
-                  idx === i ? "opacity-100" : "opacity-0"
-                }`}
-                aria-hidden={idx !== i}
-              >
-                <Image
-                  src={src}
-                  alt={`${site.name} — Naples, FL chiropractic`}
-                  fill
-                  priority={idx === 0}
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  quality={90}
-                />
-              </div>
-            ))}
-            {heroSlides.length > 1 ? (
-              <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
-                {heroSlides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`h-0.5 rounded-full transition-all ${
-                      idx === i ? "w-6 bg-white/90 shadow-sm" : "w-1 bg-white/40"
-                    }`}
-                    aria-label={`Photo ${idx + 1}`}
-                    onClick={() => setI(idx)}
-                  />
-                ))}
-              </div>
-            ) : null}
+          <div className="w-full h-[460px] md:h-[520px] overflow-hidden rounded-2xl">
+            <img
+              src="/team.jpg"
+              alt=""
+              className="h-full w-full object-cover object-center"
+            />
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
