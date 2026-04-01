@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { CTABand } from "@/components/home/CTABand";
 import { serviceSections } from "@/content/service-details";
 import { serviceHighlights, servicePillars } from "@/content/services";
 import { Container } from "@/components/ui/Container";
@@ -14,10 +15,12 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="py-16 sm:py-24">
+    <div className="py-20 sm:py-28 lg:py-32">
       <Container>
-        <h1 className="font-display text-4xl sm:text-5xl">Services & techniques</h1>
-        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[var(--muted-foreground)]">
+        <h1 className="font-display text-4xl font-medium tracking-tight sm:text-5xl">
+          Services & techniques
+        </h1>
+        <p className="mt-10 max-w-2xl text-base leading-relaxed text-[var(--muted-foreground)] sm:text-lg">
           At A Better Life Chiropractic, we take great pride in providing the
           finest chiropractic care to each and every patient. Below is an
           overview of the services offered in our Naples office — please call us
@@ -28,29 +31,35 @@ export default function ServicesPage() {
           if you have any questions.
         </p>
 
-        <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2">
           {serviceHighlights.map((s) => (
             <li
               key={s}
-              className="flex gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm"
+              className="flex gap-3 rounded-xl border border-[var(--border)]/70 bg-[var(--surface)] px-5 py-4 text-sm leading-snug text-[var(--muted-foreground)]"
             >
-              <span className="text-[var(--accent)]" aria-hidden>
-                ✓
+              <span className="shrink-0 text-[var(--accent)]" aria-hidden>
+                ·
               </span>
               {s}
             </li>
           ))}
         </ul>
 
-        <div className="mt-20 space-y-20">
+        <div className="mt-16">
+          <CTABand variant="default" />
+        </div>
+
+        <div className="mt-20 space-y-24 lg:space-y-28">
           {serviceSections.map((section) => (
             <section
               key={section.id}
               id={section.id}
-              className="scroll-mt-28 border-t border-[var(--border)] pt-16 first:border-t-0 first:pt-0"
+              className="scroll-mt-28 border-t border-[var(--border)]/80 pt-20 first:border-t-0 first:pt-0"
             >
-              <h2 className="font-display text-3xl tracking-tight">{section.title}</h2>
-              <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:items-start">
+              <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
+                {section.title}
+              </h2>
+              <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_auto] lg:items-start lg:gap-16">
                 <div className="max-w-prose space-y-5 text-[var(--muted-foreground)]">
                   {section.body.map((p, i) => (
                     <p key={i} className="leading-relaxed">
@@ -59,15 +68,15 @@ export default function ServicesPage() {
                   ))}
                 </div>
                 {section.image === "posture" ? (
-                  <figure className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-lg">
-                    <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                  <figure className="mx-auto flex shrink-0 justify-center lg:mx-0 lg:justify-end">
+                    <div className="rounded-2xl border border-[var(--border)]/80 bg-[var(--surface-2)]/50 p-5 sm:p-6">
                       <Image
                         src={servicesPostureImage}
                         alt="Spinal and postural screening illustration"
-                        width={1023}
-                        height={1023}
-                        className="h-auto w-full object-contain"
-                        sizes="(max-width: 1024px) 100vw, 400px"
+                        width={480}
+                        height={640}
+                        className="h-auto w-auto max-h-[min(52vw,420px)] max-w-[min(100%,280px)] object-contain sm:max-h-[460px] sm:max-w-[300px]"
+                        sizes="300px"
                       />
                     </div>
                   </figure>

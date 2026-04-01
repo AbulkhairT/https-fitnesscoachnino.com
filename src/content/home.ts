@@ -4,14 +4,12 @@
 
 export const home = {
   hero: {
-    eyebrow: "Chiropractic care · Naples, FL",
-    headline: "Move better. Hurt less. Get your life back.",
+    eyebrow: "Naples, Florida",
+    headline: "Relief that lasts — without living on medication.",
     subhead:
-      "Clear, modern chiropractic care for back and neck pain, headaches, injuries, and everyday strain — without defaulting to medication.",
-    supporting:
-      "We explain what we find, why it matters, and what a realistic plan looks like for your goals.",
-    ctaPrimary: "Book appointment",
-    ctaSecondary: "Call now",
+      "Back pain, neck tension, headaches, injury recovery. Dr. Deanna Barbaro explains what’s wrong, adjusts with precision, and builds a plan you actually understand.",
+    ctaPrimary: "Book your visit",
+    ctaSecondary: "Call",
     ctaTertiary: "New patient offer",
   },
   trust: {
@@ -132,11 +130,11 @@ export const home = {
 
 export const ctaBand = {
   default: {
-    headline: "Ready to feel like yourself again?",
-    subhead: "Book online or call — we’ll help you find a time that works.",
+    headline: "Next step: pick a time.",
+    subhead: "Online request or phone — we confirm every appointment personally.",
   },
   strong: {
-    headline: "Stop guessing. Start with a clear plan.",
-    subhead: "Same-day calls welcome. New patients: ask about our web offer.",
+    headline: "Book now.",
+    subhead: "New patients welcome. Ask about the web offer when you call.",
   },
 } as const;

@@ -10,7 +10,7 @@ export function SectionShell({
   id?: string;
 }) {
   return (
-    <section id={id} className={`py-20 sm:py-28 lg:py-32 ${className}`}>
+    <section id={id} className={`py-24 sm:py-32 lg:py-40 ${className}`}>
       {children}
     </section>
   );

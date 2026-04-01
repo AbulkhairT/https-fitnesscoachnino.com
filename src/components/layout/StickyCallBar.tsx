@@ -16,9 +16,9 @@ export function StickyCallBar() {
           </a>
           <Link
             href="/appointment"
-            className="flex-1 rounded-full bg-[var(--cta)] py-3.5 text-center text-sm font-semibold text-[var(--cta-foreground)] shadow-[0_-4px_24px_rgba(0,0,0,0.08)]"
+            className="flex-[1.15] rounded-full bg-[var(--cta)] py-3.5 text-center text-[15px] font-semibold text-[var(--cta-foreground)] shadow-[0_-4px_24px_rgba(0,0,0,0.08)]"
           >
-            Book
+            Book visit
           </Link>
         </div>
       </div>
@@ -32,7 +32,7 @@ export function StickyCallBar() {
           </a>
           <Link
             href="/appointment"
-            className="rounded-full bg-[var(--cta)] px-5 py-2.5 text-sm font-semibold text-[var(--cta-foreground)] hover:bg-[var(--cta-hover)]"
+            className="rounded-full bg-[var(--cta)] px-6 py-2.5 text-[13px] font-semibold text-[var(--cta-foreground)] hover:bg-[var(--cta-hover)]"
           >
             Book
           </Link>

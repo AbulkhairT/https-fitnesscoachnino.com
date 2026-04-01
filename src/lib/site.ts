@@ -32,6 +32,7 @@ export const site = {
   external: {
     /** Legacy hosted form — prefer in-app /appointment */
     appointment: "https://abetterlifechiropractic.com/appointment",
+    /** Legacy — PDFs now ship from /public/forms via /new-patient/forms */
     onlineForms: "https://abetterlifechiropractic.com/online-forms.html",
     spineSimulator: "https://abetterlifechiropractic.com/3d-spine-simulator",
     originalBlog: "https://abetterlifechiropractic.com/blog",
